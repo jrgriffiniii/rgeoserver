@@ -31,8 +31,9 @@ module RGeoServer
 
   # @return [Catalog] the default GeoServer Catalog instance
   def self.catalog opts = nil, reload = false
+    @@catalog ||= nil
     if reload || @@catalog.nil?
-      @@catalog ||= RGeoServer::Catalog.new (opts.nil?? RGeoServer::Config[:geoserver] : opts)
+      @@catalog = RGeoServer::Catalog.new (opts.nil?? RGeoServer::Config[:geoserver] : opts)
     end
     @@catalog
   end
