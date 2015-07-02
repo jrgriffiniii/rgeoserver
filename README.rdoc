@@ -6,7 +6,7 @@ RGeoServer is a Ruby client for the GeoServer RESTful Configuration interface.
 
 Requirements:
 * {GeoServer}[http://geoserver.org] 2.1.3 or later.
-* Ruby 1.9.3
+* Ruby 1.9.3 or later
 
 It provides primitive Ruby model abstraction.
 
@@ -81,17 +81,15 @@ See *examples* directory for more examples.
 
 We use {jettywrapper}[https://github.com/projecthydra/jettywrapper] to wrap a test instance of GeoServer. In theory, you should be able to point to any other local installation. Suppose that you download the binary stable version 2.1.3 binary from {here}[http://sourceforge.net/project/downloading.php?groupname=geoserver&filename=geoserver-2.1.3-bin.zip&use_mirror=softlayer], then unzip it under say, /tmp/geoserver-2.1.3. The integration tests are executed as follows:
 
-  $ rake integration
-
 If you have the test instance running already on port 8080, you can run the tests simply with:
 
-  $ rake
+  $ rake spec:integration
 
 To generate the documentation run:
 
   $ rake yard
 
-To enter into an irb console with all classes loaded:
+To enter into an Pry console with all classes loaded:
 
   $ rake console
 
