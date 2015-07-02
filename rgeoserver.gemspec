@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("rake")
   s.add_development_dependency("rspec")
   s.add_development_dependency("shoulda")
-  # s.add_development_dependency("version_bumper", "~> 0.4.0")
+  s.add_development_dependency("version_bumper")
   s.add_development_dependency("yard")
   
 end
