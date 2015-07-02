@@ -1,11 +1,9 @@
 require 'spec_helper'
 
 describe RGeoServer::Catalog do
-  subject {
-    described_class.new
-  }
   it 'responds to API' do
     %w(
+        config
         each_layer
         get_coverage
         get_coverage_store
@@ -29,7 +27,7 @@ describe RGeoServer::Catalog do
         set_default_workspace
       ).map(&:to_sym).each do |m|
       expect {
-        fail "API is missing: #{m}" unless subject.respond_to?(m)
+        fail "API is missing: #{m}" unless described_class.public_instance_methods.include?(m)
       }.not_to raise_error
     end
   end
