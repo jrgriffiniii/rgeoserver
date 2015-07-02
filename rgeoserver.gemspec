@@ -28,17 +28,13 @@ Gem::Specification.new do |s|
   s.add_dependency "rgeo-shapefile", "~> 0.2.0"
   s.add_dependency "rubyzip", "~> 0.9.0"
 
-  s.add_development_dependency("awesome_print")
   s.add_development_dependency("bundler", "~> 1.0")
-  s.add_development_dependency("debugger", "~> 1.0")
   s.add_development_dependency("equivalent-xml")
-  s.add_development_dependency("irbtools")
   s.add_development_dependency("jettywrapper")
   s.add_development_dependency("pry")
   s.add_development_dependency("rake")
   s.add_development_dependency("rspec")
-  s.add_development_dependency("shoulda")
-  # s.add_development_dependency("version_bumper", "~> 0.4.0")
+  s.add_development_dependency("version_bumper")
   s.add_development_dependency("yard")
   
 end
