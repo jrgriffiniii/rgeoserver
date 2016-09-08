@@ -6,7 +6,7 @@ RGeoServer is a Ruby client for the GeoServer RESTful Configuration interface.
 
 Requirements:
 * {GeoServer}[http://geoserver.org] 2.1.3 or later.
-* Ruby 1.9.3 or later
+* Ruby 2.2 or later
 
 It provides primitive Ruby model abstraction.
 
