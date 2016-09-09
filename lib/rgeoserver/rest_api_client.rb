@@ -1,3 +1,5 @@
+require 'active_support/core_ext/hash/indifferent_access'
+
 require 'logger'
 $logger = Logger.new(STDERR)
 $logger.level = Logger::INFO
@@ -24,7 +26,7 @@ module RGeoServer
 
     # @return [RestClient] cached or new client
     def client config = {}
-      @client ||= rest_client(config.merge(self.config[:restclient]).merge(self.config))
+      @client ||= rest_client(config.merge(self.config[:restclient]).merge(self.config).with_indifferent_access)
     end
 
     # @return [RestClient] cached or new client
