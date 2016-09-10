@@ -12,6 +12,7 @@ describe RGeoServer::CoverageStore do
         route
         save
         workspace
+        upload
         url
       ).map(&:to_sym).each do |m|
       expect {
