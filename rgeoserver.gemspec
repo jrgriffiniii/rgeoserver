@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rgeo-shapefile', '~> 0.4.1'
   s.add_dependency 'rubyzip'
 
+  s.add_development_dependency 'awesome_print'
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'equivalent-xml'
   s.add_development_dependency 'jettywrapper'

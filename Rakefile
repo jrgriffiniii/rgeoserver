@@ -19,7 +19,7 @@ begin
   namespace :spec do
     desc 'Run unit tests'
     RSpec::Core::RakeTask.new(:unit) do |t|
-      t.pattern = 'spec/unit/**/*_spec.rb'
+      t.pattern = 'spec/{unit,utils}/**/*_spec.rb'
     end
 
     desc 'Run functional tests which requires GeoServer running'
@@ -33,17 +33,17 @@ begin
     end
 
     # desc 'Run integration tests which requires GeoServer running and preloaded'
-    # RSpec::Core::RakeTask.new(:integration, :jetty_home, :jetty_port, :java_opts) do |t, args| 
+    # RSpec::Core::RakeTask.new(:integration, :jetty_home, :jetty_port, :java_opts) do |t, args|
       # t.pattern = 'spec/integration/**/*_spec.rb'
       # require 'jettywrapper'
       # jetty_params = {
         # :jetty_home => args.jetty_home,
-        # :java_opts => [args.java_opts], 
-        # :jetty_port => args.jetty_port, 
+        # :java_opts => [args.java_opts],
+        # :jetty_port => args.jetty_port,
         # :quiet => true,
         # :startup_wait => 20
       # }
-  # 
+  #
       # fail if Jettywrapper.wrap(jetty_params) do
         # Rake::Task['spec:integration'].invoke
       # end
