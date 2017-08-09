@@ -83,7 +83,7 @@ module RGeoServer
           xml.enabled @enabled
           xml.type_ @data_type if (data_type_changed? || new?)
           xml.description @description if (description_changed? || new?)
-          xml.url @url if (url_changed? || new?) && !@url.nil
+          xml.url @url if (url_changed? || new?) && !@url.nil?
         }
       end
       @message = builder.doc.to_xml
