@@ -31,6 +31,7 @@ jobs:
     steps:
       - attach_workspace:
           at: '~/rgeoserver'
+      - run: dockerize -wait tcp://localhost:8080 -timeout 1m
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake spec:unit
       - run: bundle exec rake spec:integration
