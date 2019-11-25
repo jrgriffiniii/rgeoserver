@@ -1,0 +1,45 @@
+---
+version: 2
+jobs:
+  build:
+    working_directory: ~/rgeoserver
+    docker:
+      - image: circleci/ruby:2.4.6-node-browsers
+        environment:
+          RAILS_ENV: test
+    steps:
+      - checkout
+      - type: cache-restore
+        name: Restore bundle cache
+        key: rgeoserver-{{ checksum "Gemfile.lock" }}
+      - run: bundle install --path vendor/bundle
+      - type: cache-save
+        name: Store bundle cache
+        key: rgeoserver-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+      - persist_to_workspace:
+          root: '~/rgeoserver'
+          paths: '*'
+  test:
+    working_directory: ~/rgeoserver
+    docker:
+      - image: circleci/ruby:2.4.6-node-browsers
+        environment:
+          RAILS_ENV: test
+      - image: kartoza/geoserver:latest
+    steps:
+      - attach_workspace:
+          at: '~/rgeoserver'
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rake spec:unit
+      - run: bundle exec rake spec:integration
+      - run: bundle exec rake spec:functional
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
