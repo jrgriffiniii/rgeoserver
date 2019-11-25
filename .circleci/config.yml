@@ -28,6 +28,9 @@ jobs:
         environment:
           RAILS_ENV: test
       - image: kartoza/geoserver:latest
+        environment:
+          USERNAME: admin
+          PASS: admin
     steps:
       - attach_workspace:
           at: '~/rgeoserver'
