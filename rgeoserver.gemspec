@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'confstruct', '~> 0.2.7'
   s.add_dependency 'nokogiri'
   s.add_dependency 'rest-client'
-  s.add_dependency 'rgeo', '~> 0.5.3'
-  s.add_dependency 'rgeo-shapefile', '~> 0.4.1'
+  s.add_dependency 'rgeo', '~> 1.1'
+  s.add_dependency 'rgeo-shapefile', '~> 1.2'
   s.add_dependency 'rubyzip'
 
   s.add_development_dependency 'awesome_print'

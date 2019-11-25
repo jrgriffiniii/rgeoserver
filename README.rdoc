@@ -1,7 +1,6 @@
 {<img src="https://travis-ci.org/sul-dlss/rgeoserver.svg" alt="Build Status" />}[https://travis-ci.org/sul-dlss/rgeoserver]
 
 == RGeoServer
-
 RGeoServer is a Ruby client for the GeoServer RESTful Configuration interface. 
 
 Requirements:
